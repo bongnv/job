@@ -1,2 +1,2 @@
-# job
-job is a a simple Go library that helps to compose smaller steps into a job to execute a complex business logic.
+# task
+`task` is a simple library that helps to compose complex business logic from smaller steps in a maintainable way.
