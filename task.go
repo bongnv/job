@@ -48,7 +48,10 @@ func Concurrence(tasks ...Task) Task {
 
 		go func() {
 			wg.Wait()
-			close(errCh)
+			select {
+			case errCh <- nil:
+			default:
+			}
 		}()
 
 		return <-errCh
