@@ -39,7 +39,7 @@ func Concurrence(tasks ...Task) Task {
 				if err := tClone(ctx); err != nil {
 					select {
 					case errCh <- err:
-					case <-ctx.Done():
+					default:
 					}
 				}
 				wg.Done()
